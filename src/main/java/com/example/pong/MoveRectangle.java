@@ -26,8 +26,8 @@ public class MoveRectangle {
                 switch (keyEvent.getCode()){
                     case W: p1yOfs += -9; break;
                     case S: p1yOfs += 9; break;
-                    case UP: p2yOfs += -9; break;
-                    case DOWN: p2yOfs += 9; break;
+                    case E: p2yOfs += -9; break;
+                    case D: p2yOfs += 9; break;
                 }
             }
         });

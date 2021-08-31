@@ -11,6 +11,7 @@ public class View extends Application {
     public void start(Stage stage) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(View.class.getResource("MainView.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
+        scene.getStylesheets().add(View.class.getResource("/CSS/MainCSS.css").toString());
         stage.setTitle("Pong !");
         stage.setResizable(false);
 

@@ -4,7 +4,6 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-import javafx.scene.control.ToolBar;
 import javafx.scene.shape.Circle;
 import javafx.scene.shape.Rectangle;
 import java.net.URL;
@@ -23,15 +22,24 @@ public class MainController implements Initializable {
     @FXML
     public Button btnStart;
 
+    @FXML
+    public Label lblCrcPost;
+
+    private boolean inGame = false;
+
     // Click button start
     @FXML
     private void clickStartButton(){
-
+        // Check if a game is in progress : false -> launch palet
+        if(!MovePalet.inGame){
+            MovePalet palet = new MovePalet(rctJoueur1, rctJoueur2, crcPalet, lblCrcPost);
+            palet.moveP();
+            MovePalet.inGame = true;
+        }
     }
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
     }
-
 }

@@ -3,12 +3,15 @@ package com.example.pong;
 import javafx.animation.AnimationTimer;
 import javafx.event.EventHandler;
 import javafx.scene.Scene;
+import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
+
+import java.util.EventListener;
 
 public class MoveRectangle {
     // Members
-    Scene _scene;
-    MainController _controller;
+    private Scene _scene;
+    private MainController _controller;
 
     // Constructor
     MoveRectangle(Scene scene, MainController controller){
@@ -17,17 +20,34 @@ public class MoveRectangle {
     }
 
     // Methods
-    private double p1yOfs = 0, p2yOfs = 0;
+    // Rectangles y Pos
+    private double p1yOfs = 125, p2yOfs = 125;
+
+    // Players rectangle vitesse
+    private double vitesse1 = 0, vitesse2 = 0;
     public void move(){
-        // On key press (W,S for player 1 and UP, DOWN for player 2) increase or decrease position
+        // On key press (W,S for player 1 and UP, DOWN for player 2) add speed to player rectangle
         _scene.setOnKeyPressed(new EventHandler<KeyEvent>() {
             @Override
             public void handle(KeyEvent keyEvent) {
                 switch (keyEvent.getCode()){
-                    case W: p1yOfs += -9; break;
-                    case S: p1yOfs += 9; break;
-                    case E: p2yOfs += -9; break;
-                    case D: p2yOfs += 9; break;
+                    case W: vitesse1 = -9; break;
+                    case S: vitesse1 = 9; break;
+                    case E: vitesse2 = -9; break;
+                    case D: vitesse2 = 9; break;
+                }
+            }
+        });
+
+        // On key release remove speed to player rectangle
+        _scene.setOnKeyReleased(new EventHandler<KeyEvent>() {
+            @Override
+            public void handle(KeyEvent keyEvent) {
+                switch (keyEvent.getCode()){
+                    case W: vitesse1 = 0; break;
+                    case S: vitesse1 = 0; break;
+                    case E: vitesse2 = 0; break;
+                    case D: vitesse2 = 0; break;
                 }
             }
         });
@@ -35,18 +55,22 @@ public class MoveRectangle {
         AnimationTimer animationTimer = new AnimationTimer() {
             @Override
             public void handle(long l) {
+                // add speed to pos player rectangle
+                p1yOfs+=vitesse1;
+                p2yOfs+=vitesse2;
+
                 // Player 1 box limit
-                if(p1yOfs < -123){
-                    p1yOfs = -123;
-                }else if(p1yOfs > 108){
-                    p1yOfs = 108;
+                if(p1yOfs < 0){
+                    p1yOfs = 0;
+                }else if(p1yOfs > 233){
+                    p1yOfs = 233;
                 }
 
                 // Player 2 box limit
-                if (p2yOfs < -123){
-                    p2yOfs = -123;
-                }else if(p2yOfs > 108){
-                    p2yOfs = 108;
+                if (p2yOfs < 0){
+                    p2yOfs = 0;
+                }else if(p2yOfs > 233){
+                    p2yOfs = 233;
                 }
 
                 // Increase or decrease rectangle Y position
@@ -54,6 +78,7 @@ public class MoveRectangle {
                 _controller.rctJoueur2.setY(p2yOfs);
             }
         };
+        // Launch animation
         animationTimer.start();
     }
 }

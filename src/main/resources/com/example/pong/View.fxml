@@ -10,8 +10,8 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.pong.MainController">
    <children>
-      <Rectangle id="rctJoueur1" fx:id="rctJoueur1" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="103.0" layoutY="126.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="13.0" />
-      <Rectangle id="rctJoueur2" fx:id="rctJoueur2" arcHeight="5.0" arcWidth="5.0" fill="#fa8c00" height="103.0" layoutX="587.0" layoutY="126.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="13.0" />
+      <Rectangle id="rctJoueur1" fx:id="rctJoueur1" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="103.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="13.0" y="125.0" />
+      <Rectangle id="rctJoueur2" fx:id="rctJoueur2" arcHeight="5.0" arcWidth="5.0" fill="#fa8c00" height="103.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="13.0" x="587.0" y="125.0" />
       <Circle fx:id="crcPalet" fill="#79ff00" layoutX="300.0" layoutY="177.0" radius="12.0" stroke="TRANSPARENT" strokeType="INSIDE" />
       <ToolBar fx:id="tbTools" layoutY="336.0" prefHeight="64.0" prefWidth="600.0">
         <items>
@@ -20,12 +20,18 @@
                   <Font name="System Bold" size="21.0" />
                </font>
             </Button>
-            <Label fx:id="lblScore" prefHeight="43.0" prefWidth="131.0" text="Score : " textFill="WHITE">
+            <Label fx:id="lblScore" prefHeight="43.0" prefWidth="151.0" text="Score : 0 - 0" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="21.0" />
+               </font>
+            </Label>
+            <Label prefHeight="31.0" prefWidth="347.0" text="Control : W/S | E/D" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="21.0" />
                </font>
             </Label>
         </items>
       </ToolBar>
+      <Label fx:id="lblCrcPost" layoutX="286.0" layoutY="304.0" text="Label" />
    </children>
 </AnchorPane>

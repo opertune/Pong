@@ -17,21 +17,30 @@
         <items>
           <Button fx:id="btnStart" mnemonicParsing="false" onAction="#clickStartButton" text="Start">
                <font>
-                  <Font name="System Bold" size="21.0" />
+                  <Font name="System Bold" size="20.0" />
                </font>
             </Button>
-            <Label fx:id="lblScore" prefHeight="43.0" prefWidth="151.0" text="Score : 0 - 0" textFill="WHITE">
+            <Label fx:id="lblScore" prefHeight="43.0" prefWidth="122.0" text="Score : 0 - 0" textFill="WHITE">
                <font>
-                  <Font name="System Bold" size="21.0" />
+                  <Font name="System Bold" size="20.0" />
                </font>
             </Label>
-            <Label prefHeight="31.0" prefWidth="347.0" text="Control : W/S | E/D" textFill="WHITE">
+            <Label prefHeight="31.0" prefWidth="195.0" text="Controls : W/S | E/D" textFill="WHITE">
                <font>
-                  <Font name="System Bold" size="21.0" />
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </Label>
+            <Label fx:id="lblCrcPos" text="Label" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="20.0" />
                </font>
             </Label>
         </items>
       </ToolBar>
-      <Label fx:id="lblCrcPost" layoutX="286.0" layoutY="304.0" text="Label" />
+      <Label fx:id="lblWinLose" layoutX="98.0" layoutY="133.0">
+         <font>
+            <Font name="System Bold" size="60.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>

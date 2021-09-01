@@ -8,13 +8,13 @@ import javafx.scene.input.KeyEvent;
 
 import java.util.EventListener;
 
-public class MoveRectangle {
+public class Player {
     // Members
     private Scene _scene;
     private MainController _controller;
 
     // Constructor
-    MoveRectangle(Scene scene, MainController controller){
+    Player(Scene scene, MainController controller){
         this._scene = scene;
         this._controller = controller;
     }

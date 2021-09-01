@@ -23,23 +23,28 @@ public class MainController implements Initializable {
     public Button btnStart;
 
     @FXML
-    public Label lblCrcPost;
+    public Label lblCrcPos;
 
-    private boolean inGame = false;
+    @FXML
+    public Label lblWinLose;
+
+    @FXML
+    public Label lblScore;
 
     // Click button start
     @FXML
     private void clickStartButton(){
         // Check if a game is in progress : false -> launch palet
-        if(!MovePalet.inGame){
-            MovePalet palet = new MovePalet(rctJoueur1, rctJoueur2, crcPalet, lblCrcPost);
+        if(!Palet.inGame){
+            lblWinLose.setText("");
+            Palet palet = new Palet(rctJoueur1, rctJoueur2, crcPalet, lblCrcPos, lblWinLose, lblScore);
             palet.moveP();
-            MovePalet.inGame = true;
+            Palet.inGame = true;
         }
     }
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-
+        lblCrcPos.setText("X: " + crcPalet.getLayoutX() + " | Y: " + crcPalet.getLayoutY());
     }
 }

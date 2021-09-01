@@ -16,7 +16,7 @@ public class Main extends Application {
         stage.setResizable(false);
 
         // Init MoveRectangle object
-        MoveRectangle moveRectangle = new MoveRectangle(scene, fxmlLoader.getController());
+        Player moveRectangle = new Player(scene, fxmlLoader.getController());
         moveRectangle.move();
 
         stage.setScene(scene);

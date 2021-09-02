@@ -12,7 +12,7 @@
    <children>
       <Rectangle id="rctJoueur1" fx:id="rctJoueur1" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="103.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="13.0" y="125.0" />
       <Rectangle id="rctJoueur2" fx:id="rctJoueur2" arcHeight="5.0" arcWidth="5.0" fill="#fa8c00" height="103.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="13.0" x="587.0" y="125.0" />
-      <Circle fx:id="crcPalet" centerX="300.0" centerY="177.0" fill="#79ff00" radius="12.0" stroke="TRANSPARENT" strokeType="INSIDE" />
+      <Circle fx:id="crcPalet" fill="#79ff00" centerX="300.0" centerY="177.0" radius="12.0" stroke="TRANSPARENT" strokeType="INSIDE" />
       <ToolBar fx:id="tbTools" layoutY="336.0" prefHeight="64.0" prefWidth="600.0">
         <items>
           <Button fx:id="btnStart" mnemonicParsing="false" onAction="#clickStartButton" text="Start">

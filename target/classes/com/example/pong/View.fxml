@@ -8,11 +8,11 @@
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.pong.MainController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="398.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.pong.MainController">
    <children>
       <Rectangle id="rctJoueur1" fx:id="rctJoueur1" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="103.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="13.0" y="125.0" />
       <Rectangle id="rctJoueur2" fx:id="rctJoueur2" arcHeight="5.0" arcWidth="5.0" fill="#fa8c00" height="103.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="13.0" x="587.0" y="125.0" />
-      <Circle fx:id="crcPalet" fill="#79ff00" layoutX="300.0" layoutY="177.0" radius="12.0" stroke="TRANSPARENT" strokeType="INSIDE" />
+      <Circle fx:id="crcPalet" centerX="300.0" centerY="177.0" fill="#79ff00" radius="12.0" stroke="TRANSPARENT" strokeType="INSIDE" />
       <ToolBar fx:id="tbTools" layoutY="336.0" prefHeight="64.0" prefWidth="600.0">
         <items>
           <Button fx:id="btnStart" mnemonicParsing="false" onAction="#clickStartButton" text="Start">
@@ -26,11 +26,6 @@
                </font>
             </Label>
             <Label prefHeight="31.0" prefWidth="195.0" text="Controls : W/S | E/D" textFill="WHITE">
-               <font>
-                  <Font name="System Bold" size="20.0" />
-               </font>
-            </Label>
-            <Label fx:id="lblCrcPos" text="Label" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="20.0" />
                </font>

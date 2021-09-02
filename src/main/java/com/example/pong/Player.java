@@ -23,7 +23,7 @@ public class Player {
     // Rectangles y Pos
     private double p1yOfs = 125, p2yOfs = 125;
 
-    // Players rectangle vitesse
+    // Players vitesse
     private double vitesse1 = 0, vitesse2 = 0;
     public void move(){
         // On key press (W,S for player 1 and UP, DOWN for player 2) add speed to player rectangle
@@ -31,10 +31,10 @@ public class Player {
             @Override
             public void handle(KeyEvent keyEvent) {
                 switch (keyEvent.getCode()){
-                    case W: vitesse1 = -9; break;
-                    case S: vitesse1 = 9; break;
-                    case E: vitesse2 = -9; break;
-                    case D: vitesse2 = 9; break;
+                    case W: vitesse1 = -4; break;
+                    case S: vitesse1 = 4; break;
+                    case E: vitesse2 = -4; break;
+                    case D: vitesse2 = 4; break;
                 }
             }
         });

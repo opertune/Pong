@@ -23,21 +23,20 @@ public class MainController implements Initializable {
     public Button btnStart;
 
     @FXML
-    public Label lblCrcPos;
-
-    @FXML
     public Label lblWinLose;
 
     @FXML
     public Label lblScore;
 
     // Click button start
+    public static int p1Score = 0, p2Score = 0;
     @FXML
     private void clickStartButton(){
         // Check if a game is in progress : false -> launch palet
         if(!Palet.inGame){
             lblWinLose.setText("");
-            Palet palet = new Palet(rctJoueur1, rctJoueur2, crcPalet, lblCrcPos, lblWinLose, lblScore);
+            crcPalet.setCenterX(300); crcPalet.setCenterY(177);
+            Palet palet = new Palet(rctJoueur1, rctJoueur2, crcPalet, lblWinLose, lblScore);
             palet.moveP();
             Palet.inGame = true;
         }
@@ -45,6 +44,6 @@ public class MainController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        lblCrcPos.setText("X: " + crcPalet.getLayoutX() + " | Y: " + crcPalet.getLayoutY());
+
     }
 }

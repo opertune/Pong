@@ -28,6 +28,8 @@ public class MainController implements Initializable {
     @FXML
     public Label lblScore;
 
+    @FXML
+    public Label lblCrcPos;
     // Click button start
     public static int p1Score = 0, p2Score = 0;
     @FXML
